@@ -5,9 +5,8 @@ import "../styles/globals.css"
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "500", "700"] })
 
 export const metadata: Metadata = {
-	title: "Wizard SpeelBook",
-	description:
-		"Uma aplicação intuitiva para criar e gerenciar magias em partidas de RPG.",
+	title: "Wizard SpellBook",
+	description: "Uma aplicação intuitiva para criar e gerenciar magias em partidas de RPG.",
 }
 
 export default function RootLayout({

@@ -1,0 +1,50 @@
+{
+	// React Snippets
+	"reactDefaultComponent": {
+		"prefix": "erdc",
+		"body": [
+			"export default function ${1:ComponentName}() {",
+			"  return (",
+			"    $0",
+			"  )",
+			"}",
+			"",
+			""
+		]
+	},
+	"reactComponent": {
+		"prefix": "erc",
+		"body": [
+			"export function ${1:ComponentName}() {",
+			"  return (",
+			"    $0",
+			"  )",
+			"}",
+			""
+		]
+	},
+	"reactUseState": {
+		"prefix": "useS",
+		"body": [
+			"const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
+		]
+	},
+	"reactUseEffect": {
+		"prefix": "useE",
+		"body": ["useEffect(() => {", "  $0", "}, [])"]
+	},
+	// Type Snippets
+	"exportType": {
+		"prefix": "exptp",
+		"body": ["export type ${1:Props} = {", "  ${2:name}: ${3:string}", "}", ""]
+	},
+	"type": {
+		"prefix": "tp",
+		"body": ["type ${1:Props} = {", "  ${2:name}: ${3:string}", "}", ""]
+	},
+	// Next Snippets
+	"nextImport": {
+		"prefix": "impn",
+		"body": ["import ${2:second} from '${1:first}'"]
+	}
+}
