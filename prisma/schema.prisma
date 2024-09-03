@@ -9,8 +9,8 @@ datasource db {
 }
 
 model Character {
-  id        String   @id @default(uuid())
-  name      String   @unique
+  slug      String   @id
+  name      String
   createdAt DateTime @default(now())
 
   @@map("characters")
