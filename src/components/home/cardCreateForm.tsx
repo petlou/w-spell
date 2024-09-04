@@ -74,6 +74,7 @@ export function CreateCardForm() {
 							<Input
 								{...register("name")}
 								placeholder="Nome do personagem"
+								autoFocus
 								className={
 									(errors.name || errors.slug) &&
 									"text-red-800 border-red-300 focus-visible:ring-0 focus-visible:border-red-800 placeholder:text-red-300"
