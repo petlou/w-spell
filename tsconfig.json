@@ -21,6 +21,10 @@
 			"@/*": ["./src/*"],
 			"@app/*": ["./src/app/*"],
 			"@lib/*": ["./src/lib/*"],
+			"@views/*": ["./src/views/*"],
+			"@components/*": ["./src/components/app/*"],
+			"@shadcn-ui/*": ["./src/components/shadcn/*"],
+			"@styles/*": ["./src/styles/*"],
 			"@assets/*": ["./src/assets/*"]
 		}
 	},

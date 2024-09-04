@@ -1,11 +1,14 @@
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
+
+import { ThemeProvider } from "@/components/theme-provider"
+
 import "../styles/globals.css"
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "500", "700"] })
 
 export const metadata: Metadata = {
-	title: "Wizard SpellBook",
+	title: "W-Spell",
 	description: "Uma aplicação intuitiva para criar e gerenciar magias em partidas de RPG.",
 }
 
@@ -15,8 +18,12 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt">
-			<body className={`${roboto.className} bg-slate-900 text-slate-100`}>{children}</body>
+		<html lang="pt" suppressHydrationWarning>
+			<body className={`${roboto.className} min-h-screen`}>
+				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+					{children}
+				</ThemeProvider>
+			</body>
 		</html>
 	)
 }
