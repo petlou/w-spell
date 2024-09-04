@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@components/theme-provider"
 
-import "../styles/globals.css"
+import "@styles/globals.css"
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "500", "700"] })
 
@@ -20,11 +20,18 @@ export default function RootLayout({
 	return (
 		<html lang="pt" suppressHydrationWarning>
 			<body
-				className={`${roboto.className} min-h-screen bg-gradient-to-b from-background via-10% to-accent text-foreground relative`}
+				className={`${roboto.className} flex justify-center min-h-screen min-w-full bg-gradient-to-b from-background to-accent text-foreground`}
 			>
-				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-					{children}
-				</ThemeProvider>
+				<main className="max-w-[1200px] w-full px-8 relative">
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem
+						disableTransitionOnChange
+					>
+						{children}
+					</ThemeProvider>
+				</main>
 			</body>
 		</html>
 	)
