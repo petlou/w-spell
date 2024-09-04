@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { ThemeProvider } from "@components/theme-provider"
 
@@ -30,6 +31,7 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						{children}
+						<SpeedInsights />
 					</ThemeProvider>
 				</main>
 			</body>
