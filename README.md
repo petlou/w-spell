@@ -10,7 +10,7 @@
 No terminal, clone o projeto:
 
 ```
-git clone https://github.com/petlou/wizard-spellbook.git
+git clone https://github.com/petlou/w-spell.git
 ```
 
 Utilize o [PNPM](https://pnpm.io/pt/) como package manager. <br>

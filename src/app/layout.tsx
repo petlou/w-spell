@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt" suppressHydrationWarning>
-			<body className={`${roboto.className} min-h-screen`}>
+			<body
+				className={`${roboto.className} min-h-screen bg-gradient-to-b from-background via-10% to-accent text-foreground relative`}
+			>
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
 					{children}
 				</ThemeProvider>
