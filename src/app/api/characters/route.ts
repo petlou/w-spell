@@ -25,8 +25,7 @@ export async function POST(request: Request) {
 		})
 
 		if (characterExists) {
-			const { slug, name } = characterExists
-			return NextResponse.json({ slug, name }, { status: 200 })
+			return NextResponse.json({ error: "O personagem já foi criado!" }, { status: 400 })
 		}
 
 		const { slug, name } = await prisma.character.create({

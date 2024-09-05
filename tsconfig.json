@@ -18,14 +18,15 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./src/*"],
 			"@app/*": ["./src/app/*"],
 			"@lib/*": ["./src/lib/*"],
 			"@views/*": ["./src/views/*"],
 			"@components/*": ["./src/components/*"],
+			"@services/*": ["./src/services/*"],
 			"@shadcn/*": ["./src/components/shadcn/*"],
 			"@styles/*": ["./src/styles/*"],
-			"@assets/*": ["./src/assets/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@/*": ["./src/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

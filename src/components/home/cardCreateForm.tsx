@@ -9,6 +9,8 @@ import { Input } from "@shadcn/input"
 import { Label } from "@shadcn/label"
 
 import { ErrorMessage } from "@components/shared/errorMessage"
+import { apiService } from "@services/internalService"
+import { APIError } from "@services/apiErrorService"
 
 const generateSlug = (name: string) => {
 	return name
@@ -52,8 +54,15 @@ export function CreateCardForm() {
 		}
 	}, [nameValue])
 
-	const onSubmit = (data: CharacterFormType) => {
-		console.log(data)
+	async function onSubmit(data: CharacterFormType) {
+		try {
+			const response = await apiService.post<CharacterFormType>("characters", data)
+		} catch (error) {
+			if (error instanceof APIError) {
+				console.error(`Erro ${error.statusCode}: ${error.message}`)
+				// Lidar com detalhes do erro se necessário
+			}
+		}
 	}
 
 	return (
