@@ -1,5 +1,8 @@
+"use client"
+
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
+import { useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 
@@ -41,6 +44,8 @@ export function CreateCardForm() {
 		resolver: zodResolver(characterSchema),
 	})
 
+	const router = useRouter()
+
 	const nameValue = watch("name")
 
 	useEffect(() => {
@@ -55,22 +60,46 @@ export function CreateCardForm() {
 	}, [nameValue])
 
 	async function onSubmit(data: CharacterFormType) {
+		if (await characterExists(data.slug)) return
+
 		try {
 			const response = await apiService.post<CharacterFormType>("characters", data)
+
+			router.push(`/character/${response.slug}`)
 		} catch (error) {
 			if (error instanceof APIError) {
 				console.error(`Erro ${error.statusCode}: ${error.message}`)
-				// Lidar com detalhes do erro se necessário
 			}
+		}
+	}
+
+	async function characterExists(slug: string): Promise<boolean> {
+		try {
+			const character = await apiService.get<CharacterFormType>(`characters/${slug}`)
+
+			if (character) {
+				router.push(`/character/${slug}`)
+				return true
+			}
+
+			return false
+		} catch (error) {
+			if (error instanceof APIError) {
+				if (error.statusCode !== 404) {
+					console.error(`Erro ${error.statusCode}: ${error.message}`)
+				}
+			}
+
+			return false
 		}
 	}
 
 	return (
 		<Card className="shadow-lg shadow-foreground/10">
 			<CardHeader>
-				<CardTitle>Crie seu personagem</CardTitle>
+				<CardTitle>Crie ou acesse seu personagem</CardTitle>
 				<CardDescription>
-					Crie um novo personagem ou acesse um personagem já criado.
+					Crie um novo personagem ou acesse um personagem já existente.
 				</CardDescription>
 			</CardHeader>
 			<form onSubmit={handleSubmit(onSubmit)}>
