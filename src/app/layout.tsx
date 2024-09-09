@@ -21,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt" suppressHydrationWarning>
 			<body
-				className={`${roboto.className} flex justify-center min-h-screen min-w-full bg-gradient-to-b from-background to-accent text-foreground`}
+				className={`${roboto.className} flex justify-center min-h-dvh min-w-full bg-gradient-to-b from-background to-accent text-foreground`}
 			>
 				<main className="max-w-[1200px] w-full px-8 relative">
 					<ThemeProvider

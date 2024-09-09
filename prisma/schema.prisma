@@ -11,7 +11,7 @@ datasource db {
 model Character {
   slug      String   @id
   name      String
-  createdAt DateTime @default(now())
+  createdAt DateTime @default(now()) @map("created_at")
 
   @@map("characters")
 }
