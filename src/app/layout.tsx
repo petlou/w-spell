@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from "@components/theme-provider"
 
 import "@styles/globals.css"
+import { ToggleTheme } from "@components/shared/togleThemeButton"
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300", "500", "700"] })
 
@@ -32,6 +33,7 @@ export default function RootLayout({
 					>
 						{children}
 						<SpeedInsights />
+						<ToggleTheme />
 					</ThemeProvider>
 				</main>
 			</body>
