@@ -17,7 +17,7 @@ class FetchHttpClient implements HttpClient {
 	}
 }
 
-class APIService {
+class InternalApiService {
 	private client: HttpClient
 
 	constructor(client: HttpClient) {
@@ -41,4 +41,4 @@ class APIService {
 	}
 }
 
-export const apiService = new APIService(new FetchHttpClient())
+export const internalApiService = new InternalApiService(new FetchHttpClient())

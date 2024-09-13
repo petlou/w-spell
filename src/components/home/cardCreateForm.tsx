@@ -12,7 +12,7 @@ import { Input } from "@shadcn/input"
 import { Label } from "@shadcn/label"
 
 import { ErrorMessage } from "@components/shared/errorMessage"
-import { apiService } from "@services/internalService"
+import { internalApiService } from "@services/internalService"
 import { APIError } from "@services/apiErrorService"
 
 const generateSlug = (name: string) => {
@@ -63,7 +63,7 @@ export function CreateCardForm() {
 		if (await characterExists(data.slug)) return
 
 		try {
-			const response = await apiService.post<CharacterFormType>("characters", data)
+			const response = await internalApiService.post<CharacterFormType>("characters", data)
 
 			router.push(`/character/${response.slug}`)
 		} catch (error) {
@@ -75,7 +75,7 @@ export function CreateCardForm() {
 
 	async function characterExists(slug: string): Promise<boolean> {
 		try {
-			const character = await apiService.get<CharacterFormType>(`characters/${slug}`)
+			const character = await internalApiService.get<CharacterFormType>(`characters/${slug}`)
 
 			if (character) {
 				router.push(`/character/${slug}`)
@@ -95,7 +95,7 @@ export function CreateCardForm() {
 	}
 
 	return (
-		<Card className="shadow-lg shadow-foreground/10">
+		<Card>
 			<CardHeader>
 				<CardTitle>Crie ou acesse seu personagem</CardTitle>
 				<CardDescription>
