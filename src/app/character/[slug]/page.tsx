@@ -1,10 +1,5 @@
-import Link from "next/link"
+import { CharacterView } from "@views/character"
 
 export default function Character({ params }: { params: { slug: string } }) {
-	return (
-		<>
-			<h1>Character Works</h1>
-			<Link href={`/character/${params.slug}/spells`}>Go to spells</Link>
-		</>
-	)
+	return <CharacterView slug={params.slug} />
 }

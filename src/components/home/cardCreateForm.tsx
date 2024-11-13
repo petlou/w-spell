@@ -95,7 +95,7 @@ export function CreateCardForm() {
 	}
 
 	return (
-		<Card>
+		<Card className="w-full max-w-80">
 			<CardHeader>
 				<CardTitle>Crie ou acesse seu personagem</CardTitle>
 				<CardDescription>
