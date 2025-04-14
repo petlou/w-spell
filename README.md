@@ -1,36 +1,91 @@
-<h1>Wizard SpellBook</h1>
-<p><img src="https://img.shields.io/static/v1?label=next&message=framework&color=black&style=for-the-badge&logo=next.js"/></p>
+<h1 align="center">🧙‍♂️ Wizard Spell — Gerenciador de Magias para D&D</h1>
 
-## Pré-requisitos
+<p align="center">
+  <em>Um projeto pessoal para facilitar o uso de magias em Dungeons & Dragons</em>
+</p>
 
-:warning: [Node](https://nodejs.org/en/download/) - 20 ou superior
+<p align="center">
+  <img alt="Next.js" src="https://img.shields.io/badge/built%20with-Next.js-black?logo=next.js" />
+  <img alt="Supabase" src="https://img.shields.io/badge/database-Supabase-3ECF8E?logo=supabase&logoColor=white" />
+  <img alt="Prisma" src="https://img.shields.io/badge/ORM-Prisma-3982CE?logo=prisma&logoColor=white" />
+</p>
 
-## Como rodar a aplicação :arrow_forward:
+---
 
-No terminal, clone o projeto:
+## ✨ Sobre o Projeto
 
-```
+**Wizard Spell** foi criado para tornar o gerenciamento de magias em _Dungeons & Dragons_ mais prático e intuitivo.  
+Com uma interface leve e rápida, ele ajuda jogadores a:
+
+- Consultar magias com descrições simplificadas
+- Organizar magias preparadas por dia
+- Acompanhar o uso de recursos mágicos com agilidade durante a sessão
+
+> ⚠️ **Status:** Este projeto está atualmente em **pausa**, mas você pode explorá-lo, contribuir ou adaptá-lo para seus próprios jogos!
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- **[Next.js](https://nextjs.org/)** – Framework fullstack baseado em React, com suporte a renderização híbrida (estática, SSR) e APIs integradas.
+- **[Supabase](https://supabase.com/)** – Plataforma backend open source que fornece autenticação, banco de dados PostgreSQL gerenciado e funcionalidades em tempo real.
+- **[Prisma](https://www.prisma.io/)** – ORM moderno e tipado que facilita o mapeamento, migração e consulta de dados com foco em performance.
+
+---
+
+## 🚀 Como Rodar Localmente
+
+### 1. Clone o repositório
+
+```bash
 git clone https://github.com/petlou/w-spell.git
+cd w-spell
 ```
 
-Utilize o [PNPM](https://pnpm.io/pt/) como package manager. <br>
+### 2. Instale as dependências com PNPM
 
-Para instalar as dependências rode o comando:
+Certifique-se de ter o [PNPM](https://pnpm.io/installation#using-npm) instalado.
 
+```bash
+pnpm install
 ```
-pnpm i
+
+### 3. Configure as variáveis de ambiente
+
+Copie o arquivo `.env.example` para `.env.local`.
+
+```bash
+cp .env.example .env.local
 ```
 
-<!-- Antes de executar o projeto, é necessário preencher as variáveis de ambiente no arquivo `.env` na raiz do projeto. -->
+Preencha o arquivo .env.local com as informações do Supabase (ou outro banco de dados que você preferir).
 
-Após a instalação das bibliotecas rode o seguinte para iniciar o projeto:
+### 4. Configure o banco com Prisma
 
+Se estiver utilizando Supabase:
+
+- Crie um novo projeto no Supabase.
+- Crie o banco de dados e preencha a DATABASE_URL em seu arquivo `.env.local` com a Connection String.
+
+### 5. Execute as migrations com Prisma
+
+```bash
+pnpm prisma migrate dev
 ```
+
+### 6. Rode o projeto localmente
+
+```bash
 pnpm run dev
 ```
 
-O projeto deverá ser executado em:
+A aplicação estará disponível em: http://localhost:3000
 
-```
-http://localhost:3000/
-```
+# 🤝 Contribuições
+
+Apesar do projeto estar pausado, contribuições, feedbacks e forks são super bem-vindos!
+Se quiser adicionar novas funcionalidades, melhorar a UI ou apenas usar como base, fique à vontade.
+
+# 📜 Licença
+
+Este projeto foi desenvolvido para fins educacionais e uso pessoal. Sinta-se à vontade para estudar, utilizar e adaptar!
